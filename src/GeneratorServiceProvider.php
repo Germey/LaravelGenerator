@@ -22,7 +22,7 @@ use Germey\Generator\Commands\Scaffold\ScaffoldGeneratorCommand;
 use Germey\Generator\Commands\Scaffold\ViewsGeneratorCommand;
 use Germey\Generator\Commands\VueJs\VueJsGeneratorCommand;
 
-class GermeyGeneratorServiceProvider extends ServiceProvider
+class GeneratorServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
