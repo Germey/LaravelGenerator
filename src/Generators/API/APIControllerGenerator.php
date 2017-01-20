@@ -43,7 +43,7 @@ class APIControllerGenerator extends BaseGenerator
 
         if ($this->commandData->getAddOn('swagger')) {
             $templatePrefix = 'controller';
-            $templateType = 'swagger-generator';
+            $templateType = 'generator.swagger';
         } else {
             $templatePrefix = 'api.docs.controller';
             $templateType = 'generator';
