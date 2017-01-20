@@ -35,7 +35,7 @@ class MenuGenerator extends BaseGenerator
 
         $this->menuContents = file_get_contents($this->path);
 
-        $this->menuTemplate = get_template('scaffold.layouts.menu_template', $this->templateType);
+        $this->menuTemplate = get_template('scaffold.layouts.menu_template', $this->templateType, 'infyomlabs');
 
         $this->menuTemplate = fill_template($this->commandData->dynamicVars, $this->menuTemplate);
     }

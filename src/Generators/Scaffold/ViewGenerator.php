@@ -91,14 +91,14 @@ class ViewGenerator extends BaseGenerator
 
     private function generateDataTableBody()
     {
-        $templateData = get_template('scaffold.views.datatable_body', $this->templateType);
+        $templateData = get_template('scaffold.views.datatable_body', $this->templateType, 'infyomlabs');
 
         return fill_template($this->commandData->dynamicVars, $templateData);
     }
 
     private function generateDataTableActions()
     {
-        $templateData = get_template('scaffold.views.datatables_actions', $this->templateType);
+        $templateData = get_template('scaffold.views.datatables_actions', $this->templateType, 'infyomlabs');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
@@ -109,13 +109,13 @@ class ViewGenerator extends BaseGenerator
 
     private function generateBladeTableBody()
     {
-        $templateData = get_template('scaffold.views.blade_table_body', $this->templateType);
+        $templateData = get_template('scaffold.views.blade_table_body', $this->templateType, 'infyomlabs');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
         $templateData = str_replace('$FIELD_HEADERS$', $this->generateTableHeaderFields(), $templateData);
 
-        $cellFieldTemplate = get_template('scaffold.views.table_cell', $this->templateType);
+        $cellFieldTemplate = get_template('scaffold.views.table_cell', $this->templateType, 'infyomlabs');
 
         $tableBodyFields = [];
 
@@ -139,7 +139,7 @@ class ViewGenerator extends BaseGenerator
 
     private function generateTableHeaderFields()
     {
-        $headerFieldTemplate = get_template('scaffold.views.table_header', $this->templateType);
+        $headerFieldTemplate = get_template('scaffold.views.table_header', $this->templateType, 'infyomlabs');
 
         $headerFields = [];
 
@@ -160,7 +160,7 @@ class ViewGenerator extends BaseGenerator
 
     private function generateIndex()
     {
-        $templateData = get_template('scaffold.views.index', $this->templateType);
+        $templateData = get_template('scaffold.views.index', $this->templateType, 'infyomlabs');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
@@ -170,7 +170,7 @@ class ViewGenerator extends BaseGenerator
             $paginate = $this->commandData->getOption('paginate');
 
             if ($paginate) {
-                $paginateTemplate = get_template('scaffold.views.paginate', $this->templateType);
+                $paginateTemplate = get_template('scaffold.views.paginate', $this->templateType, 'infyomlabs');
 
                 $paginateTemplate = fill_template($this->commandData->dynamicVars, $paginateTemplate);
 
@@ -202,12 +202,12 @@ class ViewGenerator extends BaseGenerator
 //                case 'email':
 //                case 'password':
 //                case 'number':
-//                    $fieldTemplate = get_template('scaffold.fields.' . $field->htmlType, $this->templateType);
+//                    $fieldTemplate = get_template('scaffold.fields.' . $field->htmlType, $this->templateType, 'infyomlabs');
 //                    break;
 //
 //                case 'select':
 //                case 'enum':
-//                    $fieldTemplate = get_template('scaffold.fields.select', $this->templateType);
+//                    $fieldTemplate = get_template('scaffold.fields.select', $this->templateType, 'infyomlabs');
 //                    $inputsArr = explode(',', $field['htmlTypeInputs']);
 //
 //                    $fieldTemplate = str_replace(
@@ -218,8 +218,8 @@ class ViewGenerator extends BaseGenerator
 //                    break;
 //
 //                case 'radio':
-//                    $fieldTemplate = get_template('scaffold.fields.radio_group', $this->templateType);
-//                    $radioTemplate = get_template('scaffold.fields.radio', $this->templateType);
+//                    $fieldTemplate = get_template('scaffold.fields.radio_group', $this->templateType, 'infyomlabs');
+//                    $radioTemplate = get_template('scaffold.fields.radio', $this->templateType, 'infyomlabs);
 //                    $inputsArr = explode(',', $field['htmlTypeInputs']);
 //                    $radioButtons = [];
 //                    foreach ($inputsArr as $item) {
@@ -234,8 +234,8 @@ class ViewGenerator extends BaseGenerator
 //                    break;
 //
 ////                case 'checkbox-group':
-////                    $fieldTemplate = get_template('scaffold.fields.checkbox_group', $this->templateType);
-////                      $radioTemplate = get_template('scaffold.fields.checks', $this->templateType);
+////                    $fieldTemplate = get_template('scaffold.fields.checkbox_group', $this->templateType, 'infyomlabs');
+////                      $radioTemplate = get_template('scaffold.fields.checks', $this->templateType, 'infyomlabs');
 ////                      $inputsArr = explode(',', $field['htmlTypeInputs']);
 ////                      $radioButtons = [];
 ////                      foreach ($inputsArr as $item) {
@@ -251,7 +251,7 @@ class ViewGenerator extends BaseGenerator
 ////                    break;
 //
 //                case 'bool-checkbox':
-//                    $fieldTemplate = get_template('scaffold.fields.bool-checkbox', $this->templateType);
+//                    $fieldTemplate = get_template('scaffold.fields.bool-checkbox', $this->templateType, 'infyomlabs');
 //                    $checkboxValue = $value = $field['htmlTypeInputs'];
 //                    if ($field['fieldType'] === 'boolean') {
 //                        if ($checkboxValue === 'checked') {
@@ -265,7 +265,7 @@ class ViewGenerator extends BaseGenerator
 //                    break;
 //
 //                case 'toggle-switch':
-//                    $fieldTemplate = get_template('scaffold.fields.toggle-switch', $this->templateType);
+//                    $fieldTemplate = get_template('scaffold.fields.toggle-switch', $this->templateType, 'infyomlabs');
 //                    $checkboxValue = $value = $field['htmlTypeInputs'];
 //                    if ($field['fieldType'] === 'boolean') {
 //                        $checkboxValue = "[ 'On' => '1' , 'Off' => '0']";
@@ -275,7 +275,7 @@ class ViewGenerator extends BaseGenerator
 //                    break;
 //
 //                case 'checkbox':
-//                    $fieldTemplate = get_template('scaffold.fields.checkbox', $this->templateType);
+//                    $fieldTemplate = get_template('scaffold.fields.checkbox', $this->templateType, 'infyomlabs');
 //                    $checkboxValue = $value = $field['htmlTypeInputs'];
 //                    if ($field['fieldType'] != 'boolean') {
 //                        $checkboxValue = "'" . $value . "'";
@@ -285,7 +285,7 @@ class ViewGenerator extends BaseGenerator
 //                    break;
 //
 //                case 'boolean':
-//                    $fieldTemplate = get_template('scaffold.fields.boolean', $this->templateType);
+//                    $fieldTemplate = get_template('scaffold.fields.boolean', $this->templateType, 'infyomlabs');
 //                    $checkboxValue = $value = $field['htmlTypeInputs'];
 //                    if ($field['fieldType'] == 'boolean') {
 //                        $checkboxValue = true;
@@ -299,7 +299,7 @@ class ViewGenerator extends BaseGenerator
 //                    break;
 //            }
 
-            $fieldTemplate = HTMLFieldGenerator::generateHTML($field, $this->templateType);
+            $fieldTemplate = HTMLFieldGenerator::generateHTML($field, $this->templateType, 'infyomlabs');
 
             if (!empty($fieldTemplate)) {
                 $fieldTemplate = fill_template_with_field_data(
@@ -312,7 +312,7 @@ class ViewGenerator extends BaseGenerator
             }
         }
 
-        $templateData = get_template('scaffold.views.fields', $this->templateType);
+        $templateData = get_template('scaffold.views.fields', $this->templateType, 'infyomlabs');
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
         $templateData = str_replace('$FIELDS$', implode("\n\n", $this->htmlFields), $templateData);
@@ -323,7 +323,7 @@ class ViewGenerator extends BaseGenerator
 
     private function generateCreate()
     {
-        $templateData = get_template('scaffold.views.create', $this->templateType);
+        $templateData = get_template('scaffold.views.create', $this->templateType, 'infyomlabs');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
@@ -333,7 +333,7 @@ class ViewGenerator extends BaseGenerator
 
     private function generateUpdate()
     {
-        $templateData = get_template('scaffold.views.edit', $this->templateType);
+        $templateData = get_template('scaffold.views.edit', $this->templateType, 'infyomlabs');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
@@ -343,7 +343,7 @@ class ViewGenerator extends BaseGenerator
 
     private function generateShowFields()
     {
-        $fieldTemplate = get_template('scaffold.views.show_field', $this->templateType);
+        $fieldTemplate = get_template('scaffold.views.show_field', $this->templateType, 'infyomlabs');
 
         $fieldsStr = '';
 
@@ -362,7 +362,7 @@ class ViewGenerator extends BaseGenerator
 
     private function generateShow()
     {
-        $templateData = get_template('scaffold.views.show', $this->templateType);
+        $templateData = get_template('scaffold.views.show', $this->templateType, 'infyomlabs');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 

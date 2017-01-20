@@ -60,7 +60,7 @@ class ControllerGenerator extends BaseGenerator
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
-        $headerFieldTemplate = get_template('scaffold.views.datatable_column', $this->templateType);
+        $headerFieldTemplate = get_template('scaffold.views.datatable_column', $this->templateType, 'infyomlabs');
 
         $headerFields = [];
 

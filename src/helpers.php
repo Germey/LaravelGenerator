@@ -82,7 +82,7 @@ if (!function_exists('get_template_file_path')) {
      *
      * @return string
      */
-    function get_template_file_path($templateName, $templateType)
+    function get_template_file_path($templateName, $templateType, $templateSpace='germey')
     {
         $templateName = str_replace('.', '/', $templateName);
 	    $templateType = str_replace('.', '/', $templateType);
@@ -98,7 +98,7 @@ if (!function_exists('get_template_file_path')) {
             return $path;
         }
 
-        return base_path('vendor/germey/'.$templateType.'/templates/'.$templateName.'.stub');
+        return base_path('vendor/'.$templateSpace.'/'.$templateType.'/templates/'.$templateName.'.stub');
     }
 }
 
@@ -111,9 +111,9 @@ if (!function_exists('get_template')) {
      *
      * @return string
      */
-    function get_template($templateName, $templateType)
+    function get_template($templateName, $templateType, $templateSpace='germey')
     {
-        $path = get_template_file_path($templateName, $templateType);
+        $path = get_template_file_path($templateName, $templateType, $templateSpace);
 
         return file_get_contents($path);
     }

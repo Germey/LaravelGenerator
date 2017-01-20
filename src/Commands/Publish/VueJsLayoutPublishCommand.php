@@ -66,13 +66,13 @@ class VueJsLayoutPublishCommand extends PublishBaseCommand
         $baseRequestCustomFiles = $this->getRequestBaseCustomFile();
 
         foreach ($files as $stub => $blade) {
-            $sourceFile = base_path('vendor/germey/'.$templateType.'/templates/'.$stub);
+            $sourceFile = base_path('vendor/infyomlabs/'.$templateType.'/templates/'.$stub);
             $destinationFile = $viewsPath.$blade;
             $this->publishFile($sourceFile, $destinationFile, $blade);
         }
 
         foreach ($vueLayoutFiles as $stub => $blade) {
-            $sourceFile = base_path('vendor/germey/'.$templateType.'/templates/vuejs/'.$stub);
+            $sourceFile = base_path('vendor/infyomlabs/'.$templateType.'/templates/vuejs/'.$stub);
             $destinationFile = $viewsPath.$blade;
             $this->publishFile($sourceFile, $destinationFile, $blade);
         }

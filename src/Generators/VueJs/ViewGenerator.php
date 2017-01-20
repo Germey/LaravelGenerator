@@ -55,7 +55,7 @@ class ViewGenerator extends BaseGenerator
 
     private function generateBladeTableBody()
     {
-        $templateData = get_template('vuejs.views.blade_table_body', $this->templateType);
+        $templateData = get_template('vuejs.views.blade_table_body', $this->templateType, 'infyomlabs');
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
         return $templateData;
@@ -63,7 +63,7 @@ class ViewGenerator extends BaseGenerator
 
     private function generateIndex()
     {
-        $templateData = get_template('vuejs.views.index', $this->templateType);
+        $templateData = get_template('vuejs.views.index', $this->templateType, 'infyomlabs');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
@@ -73,7 +73,7 @@ class ViewGenerator extends BaseGenerator
             $paginate = $this->commandData->getOption('paginate');
 
             if ($paginate) {
-                $paginateTemplate = get_template('vuejs.views.paginate', $this->templateType);
+                $paginateTemplate = get_template('vuejs.views.paginate', $this->templateType, 'infyomlabs');
 
                 $paginateTemplate = fill_template($this->commandData->dynamicVars, $paginateTemplate);
 
@@ -103,12 +103,12 @@ class ViewGenerator extends BaseGenerator
                 case 'email':
                 case 'password':
                 case 'number':
-                    $fieldTemplate = get_template('vuejs.fields.'.$field->htmlType, $this->templateType);
+                    $fieldTemplate = get_template('vuejs.fields.'.$field->htmlType, $this->templateType, 'infyomlabs');
                     break;
 
                 case 'select':
                 case 'enum':
-                    $fieldTemplate = get_template('vuejs.fields.select', $this->templateType);
+                    $fieldTemplate = get_template('vuejs.fields.select', $this->templateType, 'infyomlabs');
                     $inputsArr = explode(',', $field['htmlTypeInputs']);
 
                     $fieldTemplate = str_replace(
@@ -119,8 +119,8 @@ class ViewGenerator extends BaseGenerator
                     break;
 
                 case 'radio':
-                    $fieldTemplate = get_template('vuejs.fields.radio_group', $this->templateType);
-                    $radioTemplate = get_template('vuejs.fields.radio', $this->templateType);
+                    $fieldTemplate = get_template('vuejs.fields.radio_group', $this->templateType, 'infyomlabs');
+                    $radioTemplate = get_template('vuejs.fields.radio', $this->templateType, 'infyomlabs');
                     $inputsArr = explode(',', $field['htmlTypeInputs']);
                     $radioButtons = [];
                     foreach ($inputsArr as $item) {
@@ -152,7 +152,7 @@ class ViewGenerator extends BaseGenerator
 //                    break;
 
                 case 'checkbox':
-                    $fieldTemplate = get_template('vuejs.fields.checkbox', $this->templateType);
+                    $fieldTemplate = get_template('vuejs.fields.checkbox', $this->templateType, 'infyomlabs');
                     $checkboxValue = $value = $field['htmlTypeInputs'];
                     if ($field['fieldType'] != 'boolean') {
                         $checkboxValue = "'".$value."'";
@@ -181,7 +181,7 @@ class ViewGenerator extends BaseGenerator
                     $validationRules = implode(', ', $rules);
                     $fieldTemplate = str_replace('$VALIDATION_RULES$', $validationRules, $fieldTemplate);
 
-                    $validationMessagesTemplate = get_template('vuejs.fields.validation_messages', $this->templateType);
+                    $validationMessagesTemplate = get_template('vuejs.fields.validation_messages', $this->templateType, 'infyomlabs');
                     $validationMessages = '';
                     foreach ($rules as $rule) {
                         $rule = explode(':', $rule)[0];
@@ -199,7 +199,7 @@ class ViewGenerator extends BaseGenerator
             }
         }
 
-        $templateData = get_template('vuejs.views.fields', $this->templateType);
+        $templateData = get_template('vuejs.views.fields', $this->templateType, 'infyomlabs');
         //$templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
         $templateData = str_replace('$FIELDS$', implode("\n\n", $this->htmlFields), $templateData);
@@ -210,7 +210,7 @@ class ViewGenerator extends BaseGenerator
 
     private function generateForm()
     {
-        $templateData = get_template('vuejs.views.form', $this->templateType);
+        $templateData = get_template('vuejs.views.form', $this->templateType, 'infyomlabs');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
@@ -220,7 +220,7 @@ class ViewGenerator extends BaseGenerator
 
     private function generateShow()
     {
-        $templateData = get_template('vuejs.views.show', $this->templateType);
+        $templateData = get_template('vuejs.views.show', $this->templateType, 'infyomlabs');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
@@ -230,7 +230,7 @@ class ViewGenerator extends BaseGenerator
 
     private function generateDelete()
     {
-        $templateData = get_template('vuejs.views.delete', $this->templateType);
+        $templateData = get_template('vuejs.views.delete', $this->templateType, 'infyomlabs');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 

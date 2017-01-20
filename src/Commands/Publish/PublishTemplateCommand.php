@@ -54,7 +54,7 @@ class PublishTemplateCommand extends PublishBaseCommand
     {
         $templateType = config('generator.templates', 'core-templates');
 
-        $templatesPath = base_path('vendor/generator/'.$templateType.'/templates/scaffold');
+        $templatesPath = base_path('vendor/infyomlabs/'.$templateType.'/templates/scaffold');
 
         return $this->publishDirectory($templatesPath, $this->templatesDir.'/scaffold', 'templates/scaffold', true);
     }
