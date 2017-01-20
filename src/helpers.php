@@ -85,6 +85,7 @@ if (!function_exists('get_template_file_path')) {
     function get_template_file_path($templateName, $templateType)
     {
         $templateName = str_replace('.', '/', $templateName);
+	    $templateType = str_replace('.', '/', $templateType);
 
         $templatesPath = config(
             'generator.path.templates_dir',
