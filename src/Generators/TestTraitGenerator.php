@@ -26,7 +26,7 @@ class TestTraitGenerator extends BaseGenerator
 
     public function generate()
     {
-        $templateData = get_template('test.trait', 'laravel-generator');
+        $templateData = get_template('test.trait', 'generator');
 
         $templateData = $this->fillTemplate($templateData);
 

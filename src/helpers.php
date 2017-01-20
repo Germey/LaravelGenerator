@@ -88,7 +88,7 @@ if (!function_exists('get_template_file_path')) {
 
         $templatesPath = config(
             'generator.path.templates_dir',
-            base_path('resources/infyom/infyom-generator-templates/')
+            base_path('resources/generator/templates/')
         );
 
         $path = $templatesPath.$templateName.'.stub';
@@ -97,7 +97,7 @@ if (!function_exists('get_template_file_path')) {
             return $path;
         }
 
-        return base_path('vendor/infyomlabs/'.$templateType.'/templates/'.$templateName.'.stub');
+        return base_path('vendor/germey/'.$templateType.'/templates/'.$templateName.'.stub');
     }
 }
 

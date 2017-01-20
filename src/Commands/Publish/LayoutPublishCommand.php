@@ -85,7 +85,7 @@ class LayoutPublishCommand extends PublishBaseCommand
 
         $routeContents = file_get_contents($path);
 
-        $routesTemplate = get_template('routes.auth', 'laravel-generator');
+        $routesTemplate = get_template('routes.auth', 'generator');
 
         $routeContents .= "\n\n".$routesTemplate;
 
@@ -95,7 +95,7 @@ class LayoutPublishCommand extends PublishBaseCommand
 
     private function publishHomeController()
     {
-        $templateData = get_template('home_controller', 'laravel-generator');
+        $templateData = get_template('home_controller', 'generator');
 
         $templateData = $this->fillTemplate($templateData);
 

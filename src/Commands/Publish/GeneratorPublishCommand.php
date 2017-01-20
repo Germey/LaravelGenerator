@@ -68,7 +68,7 @@ class GeneratorPublishCommand extends PublishBaseCommand
 
     private function publishBaseController()
     {
-        $templateData = get_template('app_base_controller', 'laravel-generator');
+        $templateData = get_template('app_base_controller', 'generator');
 
         $templateData = $this->fillTemplate($templateData);
 

@@ -1,6 +1,6 @@
 {
   "name": "germey/generator",
-  "description": "Laravel Generator",
+  "description": "Laravel Generator extends from Infyom Laravel Generator",
   "keywords": [
     "laravel",
     "api",

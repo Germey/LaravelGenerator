@@ -42,7 +42,7 @@ class ModelJsConfigGenerator extends BaseGenerator
 
     private function generateModelJs()
     {
-        $templateData = get_template('vuejs.js.model-config', 'laravel-generator');
+        $templateData = get_template('vuejs.js.model-config', 'generator');
         $fieldsRow = '';
         $i = 0;
         $lenghtFields = count($this->commandData->fields);
@@ -56,7 +56,7 @@ class ModelJsConfigGenerator extends BaseGenerator
         }
         $templateData = str_replace('$FIELDS_ROW$', $fieldsRow, $templateData);
 
-        $fieldsColTemplateData = get_template('vuejs.js.fields_col', 'laravel-generator');
+        $fieldsColTemplateData = get_template('vuejs.js.fields_col', 'generator');
         $fieldsColTemplate = '';
         $i = 0;
         foreach ($this->commandData->fields as $field) {

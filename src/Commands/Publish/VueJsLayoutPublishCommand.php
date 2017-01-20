@@ -214,7 +214,7 @@ class VueJsLayoutPublishCommand extends PublishBaseCommand
         $path = config('generator.path.routes', app_path('Http/routes.php'));
         $routeContents = file_get_contents($path);
 
-        $routesTemplate = get_template('routes.auth', 'laravel-generator');
+        $routesTemplate = get_template('routes.auth', 'generator');
         if ($this->laravelVersion == '5.1') {
             $routesTemplate = str_replace('$LOGOUT_METHOD$', 'getLogout', $routesTemplate);
         } else {
@@ -229,7 +229,7 @@ class VueJsLayoutPublishCommand extends PublishBaseCommand
 
     private function publishHomeController()
     {
-        $templateData = get_template('home_controller', 'laravel-generator');
+        $templateData = get_template('home_controller', 'generator');
 
         $templateData = $this->fillTemplate($templateData);
 

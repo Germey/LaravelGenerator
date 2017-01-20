@@ -25,7 +25,7 @@ class RepositoryGenerator extends BaseGenerator
 
     public function generate()
     {
-        $templateData = get_template('repository', 'laravel-generator');
+        $templateData = get_template('repository', 'generator');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 

@@ -31,11 +31,11 @@ class ControllerGenerator extends BaseGenerator
     public function generate()
     {
         if ($this->commandData->getAddOn('datatables')) {
-            $templateData = get_template('scaffold.controller.datatable_controller', 'laravel-generator');
+            $templateData = get_template('scaffold.controller.datatable_controller', 'generator');
 
             $this->generateDataTable();
         } else {
-            $templateData = get_template('scaffold.controller.controller', 'laravel-generator');
+            $templateData = get_template('scaffold.controller.controller', 'generator');
 
             $paginate = $this->commandData->getOption('paginate');
 
@@ -56,7 +56,7 @@ class ControllerGenerator extends BaseGenerator
 
     private function generateDataTable()
     {
-        $templateData = get_template('scaffold.datatable', 'laravel-generator');
+        $templateData = get_template('scaffold.datatable', 'generator');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 

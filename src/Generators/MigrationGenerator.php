@@ -24,7 +24,7 @@ class MigrationGenerator extends BaseGenerator
 
     public function generate()
     {
-        $templateData = get_template('migration', 'laravel-generator');
+        $templateData = get_template('migration', 'generator');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 

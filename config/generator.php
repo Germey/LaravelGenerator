@@ -39,7 +39,7 @@ return [
 
         'views'             => base_path('resources/views/'),
 
-        'schema_files'      => base_path('resources/model_schemas/'),
+        'schema_files'      => base_path('resources/schemas/'),
 
         'templates_dir'     => base_path('resources/generator/templates/'),
 
@@ -140,7 +140,7 @@ return [
 
     'add_on' => [
 
-        'swagger'       => true,
+        'swagger'       => false,
 
         'tests'         => true,
 

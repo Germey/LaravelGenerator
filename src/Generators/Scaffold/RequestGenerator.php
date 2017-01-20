@@ -36,7 +36,7 @@ class RequestGenerator extends BaseGenerator
 
     private function generateCreateRequest()
     {
-        $templateData = get_template('scaffold.request.create_request', 'laravel-generator');
+        $templateData = get_template('scaffold.request.create_request', 'generator');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
@@ -48,7 +48,7 @@ class RequestGenerator extends BaseGenerator
 
     private function generateUpdateRequest()
     {
-        $templateData = get_template('scaffold.request.update_request', 'laravel-generator');
+        $templateData = get_template('scaffold.request.update_request', 'generator');
 
         $templateData = fill_template($this->commandData->dynamicVars, $templateData);
 
