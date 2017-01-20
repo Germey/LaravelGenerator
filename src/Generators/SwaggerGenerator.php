@@ -101,13 +101,13 @@ class SwaggerGenerator
 
     public static function generateSwagger($fields, $fillables, $variables)
     {
-        $template = get_template('model.model', 'generator.swagger');
+        $template = get_template('swagger.model.model', 'generator');
 
         $templateData = fill_template($variables, $template);
 
         $templateData = str_replace('$REQUIRED_FIELDS$', '"'.implode('", "', $fillables).'"', $templateData);
 
-        $propertyTemplate = get_template('model.property', 'generator.swagger');
+        $propertyTemplate = get_template('swagger.model.property', 'generator');
 
         $properties = self::preparePropertyFields($propertyTemplate, $fields);
 
