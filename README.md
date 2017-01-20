@@ -21,7 +21,7 @@ Add following packages into your `composer.json`.
 "require": {
     "germey/generator": "~1.0",
     "laravelcollective/html": "^5.3.0",
-  	"doctrine/dbal": "~2.3"
+    "doctrine/dbal": "~2.3"
 }
 ```
 
@@ -91,3 +91,4 @@ php artisan generator:rollback $MODEL_NAME $COMMAND_TYPE
 ```
 
 Please remember replace all the `infyom` to `generator`.
+
